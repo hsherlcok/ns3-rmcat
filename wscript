@@ -22,7 +22,9 @@ def build(bld):
     module.source = [
         'model/apps/rmcat-sender.cc',
         'model/apps/rmcat-receiver.cc',
+        'model/apps/gcc-node.cc',
         'model/apps/rtp-header.cc',
+        'model/apps/gfp-header.cc',
         'model/syncodecs/syncodecs.cc',
         'model/syncodecs/traces-reader.cc',
         'model/congestion-control/sender-based-controller.cc',
@@ -31,6 +33,9 @@ def build(bld):
         'model/topo/topo.cc',
         'model/topo/wired-topo.cc',
         'model/topo/wifi-topo.cc',
+        'model/congestion-control/gcc-sender-controller.cc',
+        'model/congestion-control/gcc-receiver-controller.cc',
+        'model/congestion-control/rate_statistics.cc',
         ]
 
     module.defines = ['NS3_ASSERT_ENABLE', 'NS3_LOG_ENABLE']
@@ -53,7 +58,9 @@ def build(bld):
         'model/apps/rmcat-constants.h',
         'model/apps/rmcat-sender.h',
         'model/apps/rmcat-receiver.h',
+        'model/apps/gcc-node.h',
         'model/apps/rtp-header.h',
+        'model/apps/gfp-header.h',
         'model/syncodecs/syncodecs.h',
         'model/syncodecs/traces-reader.h',
         'model/congestion-control/sender-based-controller.h',
@@ -62,6 +69,9 @@ def build(bld):
         'model/topo/topo.h',
         'model/topo/wired-topo.h',
         'model/topo/wifi-topo.h',
+        'model/congestion-control/gcc-receiver-controller.h',
+        'model/congestion-control/gcc-sender-controller.h',
+        'model/congestion-control/rate_statistics.h',
        ]
 
     if bld.env.ENABLE_EXAMPLES:

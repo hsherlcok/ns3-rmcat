@@ -20,3 +20,9 @@
 def build(bld):
     obj = bld.create_ns3_program('rmcat-example', ['ns3-rmcat'])
     obj.source = 'rmcat-example.cc',
+    obj = bld.create_ns3_program('simple-example', ['ns3-rmcat'])
+    obj.source = 'simple-example.cc',
+    obj = bld.create_ns3_program('rmcat-eval', ['ns3-rmcat'])
+    obj.source = 'rmcat-eval.cc',
+    obj = bld.create_ns3_program('unit_test', ['ns3-rmcat'])
+    obj.source = 'unit_test.cc',
